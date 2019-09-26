@@ -36,10 +36,14 @@ public class Week4 {
      * @return BMI index
      */
     public static String calculateBMI(double weight, double height) {
-        double BMI = weight/(height*height);
-        if (BMI < 18.5) return "Thieu can";
-        if (BMI >= 18.5 && BMI <= 22.9) return "Binh thuong";
-        if (BMI >= 23 && BMI <= 24.9) return "Thua can";
-        if (BMI >= 25) return "Beo phi";
+        String s = new String();
+        double BMI;
+        BMI = weight/(Math.pow(height,2.));
+        BMI = (double)Math.round(BMI*10)/10;
+        if (BMI < 18.5) s = "Thiếu cân";
+        if (BMI >= 18.5 && BMI <= 22.9) s = "Bình thường";
+        if (BMI >= 23 && BMI <= 24.9) s = "Thừa cân";
+        if (BMI >= 25) s = "Béo phì";
+        return s;
     }
 }
